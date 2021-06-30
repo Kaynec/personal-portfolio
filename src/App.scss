@@ -220,13 +220,11 @@ h5 {
 
 main {
   width: 100%;
-  min-height: 100vh;
-  // padding: 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  min-height: clamp(50vh, 85vh, 600px);
   position: relative;
-  flex-grow: 1;
   &::after {
     content: "";
     position: absolute;
@@ -240,8 +238,6 @@ main {
 
   section {
     &:first-child {
-      width: clamp(35%, 50%, 600px);
-
       h1 {
         // font-size: clamp(3rem, 4.5rem, 6rem);
         padding: 1rem 0;
@@ -279,6 +275,7 @@ main {
       background: #1a2026;
       border-radius: 15px;
       max-width: 900px;
+      width: clamp(40%, 65%, 70%);
       p {
         color: white;
         font-size: 2rem;
@@ -379,8 +376,8 @@ main {
   background: teal;
   text-align: center;
   padding: 5rem;
-  min-height: 30vh;
   display: grid;
+  place-content: center;
 
   h1 {
     font-size: 3rem;
@@ -414,12 +411,15 @@ main {
 @media screen and (max-width: 800px) {
   main {
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-
     section {
       &:first-child {
-        padding: 0;
+        width: 100%;
+        padding-left: 4rem;
+      }
+
+      &:nth-of-type(2) {
+        width: 100%;
+        padding-left: 4rem;
       }
     }
   }
