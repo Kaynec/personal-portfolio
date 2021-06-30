@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+/data.js
 # production
 /build
 
