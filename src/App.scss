@@ -138,6 +138,8 @@ body {
 
 html {
   font-size: 62.5%;
+  margin: 0;
+  padding: 0;
 }
 h1,
 h2,
@@ -219,7 +221,7 @@ h5 {
 main {
   width: 100%;
   min-height: 100vh;
-  padding: 5rem;
+  // padding: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -239,6 +241,7 @@ main {
   section {
     &:first-child {
       width: clamp(35%, 50%, 600px);
+
       h1 {
         // font-size: clamp(3rem, 4.5rem, 6rem);
         padding: 1rem 0;
@@ -413,13 +416,17 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+
+    section {
+      &:first-child {
+        padding: 0;
+      }
+    }
   }
 
   #Projects {
     .project {
       width: 65%;
-      // margin: 0;
-      // padding: 0;
     }
   }
 }
@@ -446,7 +453,7 @@ main {
     padding: 1rem;
     section {
       &:first-child {
-        padding: 0;
+        padding: 2rem;
         margin: 0;
         width: 100%;
       }
@@ -474,6 +481,7 @@ main {
     align-items: center;
     h1 {
       text-align: center;
+      line-height: 1.6;
     }
 
     .project {
@@ -511,11 +519,21 @@ main {
     padding-top: 10rem;
     justify-content: space-between;
     gap: 10rem;
+    section {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   #Projects {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+
     h1 {
-      padding: 1rem;
+      font-size: 3.5rem;
+      line-height: 1.6;
+      margin: 0;
     }
   }
 
@@ -526,14 +544,8 @@ main {
     }
 
     h1 {
-      padding: 0;
+      font-size: 2rem;
       margin: 0;
     }
   }
-}
-
-*,
-*::before,
-*::after {
-  overflow-x: hidden;
 }
