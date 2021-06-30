@@ -8,6 +8,19 @@ export default function Home() {
   return (
     <>
       <header className="header">
+        <div>
+          <IconButton
+            href="https:/linkedin.com/in/ali-ozbak-26884120b/"
+            target="_blank"
+          >
+            <LinkedInIcon className={classes.IconButton} fontSize="large" />
+          </IconButton>
+
+          <IconButton href="https://github.com/Kaynec" target="_blank">
+            <GitHubIcon className={classes.IconButton} fontSize="large" />
+          </IconButton>
+        </div>
+
         <nav>
           {/* <a href="#Home"> Home</a> */}
           <a href="#Projects"> Projects</a>

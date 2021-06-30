@@ -127,6 +127,8 @@ table {
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 
 //  // // // // // // // // // // // // //
+/////////////////////////////////////////////
+/////////////////////////////////////////////
 body {
   position: relative;
   margin: 0;
@@ -148,6 +150,20 @@ p {
   color: #102a42;
 }
 
+/*  fluid typography   */
+h1 {
+  font-size: clamp(3rem, 4.5rem, 6rem);
+  padding: 1rem 0;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: rgba(0, 128, 128, 0.729);
+}
+
+/*  fluid typography   */
+
 *,
 *::after,
 *::before {
@@ -157,7 +173,7 @@ p {
 .header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   &::after {
     content: "";
@@ -170,6 +186,11 @@ p {
     z-index: -2;
   }
 
+  div {
+    padding: 2rem;
+    margin-left: 17.5%;
+    margin-top: 2.5rem;
+  }
   nav {
     padding: 2rem;
     margin-right: 17.5%;
@@ -203,6 +224,7 @@ main {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  flex-grow: 1;
   &::after {
     content: "";
     position: absolute;
@@ -216,9 +238,9 @@ main {
 
   section {
     &:first-child {
-      width: 30%;
+      width: clamp(35%, 50%, 600px);
       h1 {
-        font-size: 6rem;
+        // font-size: clamp(3rem, 4.5rem, 6rem);
         padding: 1rem 0;
         font-weight: 700;
         span {
@@ -228,7 +250,7 @@ main {
       }
 
       h5 {
-        font-size: 3rem;
+        //   font-size: clamp(1rem, 1.5rem, 2rem);
         color: rgba(0, 128, 128, 0.729);
       }
 
@@ -253,7 +275,7 @@ main {
       padding: 1.8rem;
       background: #1a2026;
       border-radius: 15px;
-      max-width: 70%;
+      max-width: 900px;
       p {
         color: white;
         font-size: 2rem;
@@ -312,9 +334,11 @@ main {
     }
     .stack {
       margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
       span {
         background: #dae2ec;
-        margin-right: 1rem;
+        margin: 0.5rem;
         padding: 0.5rem 1rem;
         color: #617d98;
       }
@@ -352,6 +376,8 @@ main {
   background: teal;
   text-align: center;
   padding: 5rem;
+  min-height: 30vh;
+  display: grid;
 
   h1 {
     font-size: 3rem;
@@ -363,7 +389,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 5rem;
 
     div {
       padding: 1rem;
@@ -380,4 +406,134 @@ main {
       }
     }
   }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  #Projects {
+    .project {
+      width: 65%;
+      // margin: 0;
+      // padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 4rem;
+    margin: 0;
+
+    div {
+      padding: 0;
+      margin: 0;
+    }
+
+    nav {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  main {
+    flex-direction: column;
+    padding-top: 0rem;
+    padding: 1rem;
+    section {
+      &:first-child {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      &:nth-of-type(2) {
+        padding: 1.8rem;
+        background: #1a2026;
+        border-radius: 15px;
+        width: 100%;
+        p {
+          color: white;
+          font-size: 2rem;
+          padding: 1.5rem;
+        }
+
+        span {
+          color: #e2410a;
+          margin: 0.25rem;
+        }
+      }
+    }
+  }
+
+  #Projects {
+    justify-content: center;
+    align-items: center;
+    h1 {
+      text-align: center;
+    }
+
+    .project {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.708);
+      margin: 1rem 0;
+      padding: 5rem;
+      &:nth-of-type(odd) {
+        margin: 0;
+        margin-top: 1rem;
+      }
+      &:nth-of-type(even) {
+        margin: 0;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  #Contact {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    padding: 1rem;
+  }
+
+  main {
+    display: flex;
+    padding-top: 10rem;
+    justify-content: space-between;
+    gap: 10rem;
+  }
+
+  #Projects {
+    h1 {
+      padding: 1rem;
+    }
+  }
+
+  #Contact {
+    div {
+      padding: 1rem;
+      margin-right: 1rem;
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  overflow-x: hidden;
 }
