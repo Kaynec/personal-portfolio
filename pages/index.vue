@@ -12,28 +12,41 @@
     </ClientOnly>
 
     <div
-      class="flex flex-col md:flex-row items-center justify-center mx-auto max-w-4xl px-8 gap-4 w-full min-h-[75svh] max-h-[850px]"
+      class="flex flex-col md:flex-row items-center justify-between mx-auto max-w-7xl px-8 gap-4 w-full min-h-[75svh] max-h-[850px]"
     >
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col">
         <SparklesText
           text="Ali Ozbak"
           :colors="{ first: '#9E7AFF', second: '#FE8BBB' }"
-          :sparkles-count="10"
+          :sparkles-count="5"
+          class="py-2"
         />
 
-        <h1 class="text-4xl font-bold">Software Developer</h1>
-        <p>
-          I'm Ali, a passionate and dedicated software developer with over 2
-          years of experience.
-        </p>
-        <p>
-          I specialize in front end development and have a strong foundation of
-          technical skills.
-        </p>
-        <p>
-          I'm driven by the opportunity to apply my skills in the real world and
-          witness the impact of my work firsthand.
-        </p>
+        <h1 class="text-4xl font-bold pb-2">Software Developer</h1>
+        <div class="py-4">
+          <p class="text-gray-200 text-sm">
+            I'm Ali, a passionate and dedicated software developer with over 2
+            years of experience.
+          </p>
+          <p class="text-gray-200 text-sm">
+            I specialize in front end development and have a strong foundation
+            of technical skills.
+          </p>
+          <p class="text-gray-200 text-sm">
+            I'm driven by the opportunity to apply my skills in the real world
+            and witness the impact of my work firsthand.
+          </p>
+        </div>
+        <div class="flex gap-2 py-4">
+          <RouterLink to="/projects" class="flex-1 max-w-48">
+            <RainbowButton class="w-full">
+              <span>Projects</span>
+            </RainbowButton>
+          </RouterLink>
+          <!-- <RippleButton class="flex-1 max-w-48">
+            <span>Resume</span>
+          </RippleButton> -->
+        </div>
       </div>
 
       <ClientOnly>
