@@ -1,0 +1,47 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    fill="none"
+    class="size-8 shrink-0"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient
+        id="aro-plate"
+        x1="10"
+        y1="6"
+        x2="54"
+        y2="58"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="var(--accent)" stop-opacity="1" />
+        <stop offset="1" stop-color="var(--accent)" stop-opacity="0.78" />
+      </linearGradient>
+    </defs>
+
+    <rect width="64" height="64" rx="18" fill="url(#aro-plate)" />
+    <rect
+      x="4.75"
+      y="4.75"
+      width="54.5"
+      height="54.5"
+      rx="14"
+      stroke="#fff"
+      stroke-opacity="0.2"
+      stroke-width="1.25"
+    />
+
+    <!-- Custom AR monogram -->
+    <g fill="#fff">
+      <!-- A -->
+      <path
+        d="M11 48.8 24.6 13.2a2.2 2.2 0 0 1 4.1.15L40.2 42.5h-5.7l-2.9-8.2H21.4l-3.1 8.2-2.6 6.3H11Zm12.8-14.8h7.1L27.4 23.6 23.8 34Z"
+      />
+      <!-- R -->
+      <path
+        d="M34.2 13.5h9.8c5.9 0 9.9 3.3 9.9 8.4 0 3.9-2.2 6.8-5.8 8l6.9 18.9h-5.9L42.5 32.8H39.6v15.95h-5.4V13.5Zm5.4 4.7v9.9h4.1c2.55 0 4.05-1.35 4.05-3.85s-1.5-3.85-4.05-3.85h-4.1Z"
+      />
+    </g>
+  </svg>
+</template>

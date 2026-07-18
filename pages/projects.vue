@@ -1,107 +1,72 @@
 <template>
-  <div class="w-full h-full relative py-8">
-    <ClientOnly>
-      <GridBg
-        class="fixed inset-0 z-0 [mask-image:radial-gradient(650px_circle_at_center,white,transparent)]"
-        :square-size="4"
-        :grid-gap="6"
-        color="#60A5FA"
-        :max-opacity="0.3"
-        :flicker-chance="0.1"
-      />
-    </ClientOnly>
+  <main class="mx-auto min-h-svh max-w-content px-6 pb-16 pt-28 md:px-10">
+    <Reveal>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+        {{ t.projectsArchive }}
+      </p>
+      <h1 class="text-4xl font-semibold tracking-tight md:text-6xl">
+        {{ t.projectsTitle }}
+      </h1>
+      <p class="mt-5 max-w-xl text-ink-soft">
+        {{ t.projectsIntro }}
+      </p>
+    </Reveal>
 
-    <div
-      class="flex flex-col gap-4 container max-w-7xl mx-auto justify-center h-full"
-    >
-      <h1 class="text-5xl">Projects</h1>
+    <ul class="mt-14 divide-y divide-line border-y border-line md:mt-20">
+      <li v-for="(project, index) in t.projects" :key="project.name">
+        <Reveal :delay="index * 60">
+          <a
+            :href="project.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group grid grid-cols-[1fr_auto] items-baseline gap-4 py-8 transition-colors md:grid-cols-[7rem_1fr_12rem_auto] md:gap-8 md:py-10"
+          >
+            <span class="hidden text-sm text-muted md:block">
+              {{ project.year }}
+            </span>
+            <div>
+              <h2
+                class="text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent md:text-3xl"
+              >
+                {{ project.name }}
+              </h2>
+              <p class="mt-2 max-w-xl text-sm leading-relaxed text-ink-soft md:text-base">
+                {{ project.description }}
+              </p>
+            </div>
+            <p class="hidden text-sm text-muted md:block">
+              {{ project.stack.join(" · ") }}
+            </p>
+            <span
+              class="text-sm text-muted transition-transform duration-300 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:text-ink"
+            >
+              <span class="ltr:inline rtl:hidden">→</span>
+              <span class="ltr:hidden rtl:inline">←</span>
+            </span>
+          </a>
+        </Reveal>
+      </li>
+    </ul>
 
-      <BentoGrid
-        class="grid w-full auto-rows-[22rem] grid-cols-3 gap-4 lg:grid-rows-3"
-      >
-        <BentoGridCard
-          v-for="(feature, index) in features"
-          :key="index"
-          v-bind="feature"
-          :class="feature.class"
+    <Reveal :delay="100">
+      <div class="mt-12">
+        <NuxtLink
+          to="/"
+          class="text-sm text-muted transition-colors hover:text-ink"
         >
-          <template v-if="feature.image" #background>
-            <div
-              class="absolute right-0 top-0 size-full bg-center opacity-20 transition duration-150 ease-in-out group-hover:opacity-20"
-              :style="`background-image: url('${feature.image}')`"
-              style="background-size: cover; background-repeat: no-repeat"
-            ></div>
-          </template>
-        </BentoGridCard>
-      </BentoGrid>
-    </div>
-  </div>
+          {{ t.backHome }}
+        </NuxtLink>
+      </div>
+    </Reveal>
+  </main>
 </template>
 
 <script setup lang="ts">
-const features = [
-  {
-    name: "Cheats Game",
-    description: "Shopping website with a a focus on gaming built with Nuxt",
-    href: {
-      external: true,
-      link: "https://cheatsg.ir",
-    },
-    image:
-      "https://ik.imagekit.io/p1ff3xmg5n/image.png?updatedAt=1739400991595",
-    cta: "Visit",
-    class: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
-  },
+const { t, initLocale } = useLocale();
 
-  {
-    name: "Advent Of Code 2024",
-    description: "Check out my advent of code solutions for 2024.",
-    href: {
-      external: true,
-      link: "https://github.com/kaynec/advent-of-code-2024",
-    },
+useHead({
+  title: computed(() => t.value.projectsPageTitle),
+});
 
-    image:
-      "https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    cta: "Visit",
-    class: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
-  },
-  {
-    name: "Caption",
-    description: "a video subtitle editing app built with react",
-    href: {
-      external: true,
-      link: "https://caption.darkube.app",
-    },
-    cta: "Visit",
-    class: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-  },
-  {
-    name: "Herfeh Plus Pwa",
-    description: "a pwa app built with vue and vuetify",
-    href: {
-      external: true,
-      link: "https://webapp.herfehplus.ir/",
-    },
-    cta: "Visit",
-    class: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
-  },
-  {
-    name: "Saei Shop",
-    description: "A general purpose shopping website built with nuxt",
-    href: {
-      external: true,
-      link: "https://cheatsg.ir",
-    },
-    images: [
-      "https://ik.imagekit.io/p1ff3xmg5n/image.png?updatedAt=1739399354454",
-      "https://ik.imagekit.io/p1ff3xmg5n/image.png?updatedAt=1739399037367",
-    ],
-    image:
-      "https://ik.imagekit.io/p1ff3xmg5n/image.png?updatedAt=1739401875675",
-
-    cta: "Visit",
-    class: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-  },
-];
+onMounted(() => initLocale());
 </script>

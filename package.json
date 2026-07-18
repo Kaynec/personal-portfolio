@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "personal-portfolio",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-vue": "^0.11.21",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@vueuse/core": "^12.5.0",
     "motion-v": "^0.10.0-beta.1",
