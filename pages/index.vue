@@ -35,18 +35,20 @@
           class="mt-8 flex flex-wrap gap-3 animate-fade-up md:mt-10"
           style="animation-delay: 0.4s"
         >
-          <a
-            href="#work"
-            class="inline-flex items-center justify-center border border-ink bg-ink px-5 py-3 text-sm font-medium text-surface transition-colors duration-300 hover:bg-transparent hover:text-ink"
+          <button
+            type="button"
+            class="inline-flex cursor-pointer items-center justify-center border border-ink bg-ink px-5 py-3 text-sm font-medium text-surface transition-colors duration-300 hover:bg-transparent hover:text-ink"
+            @click="scrollToSection('#work')"
           >
             {{ t.selectedWork }}
-          </a>
-          <a
-            href="#contact"
-            class="inline-flex items-center justify-center border border-line bg-transparent px-5 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:border-ink"
+          </button>
+          <button
+            type="button"
+            class="inline-flex cursor-pointer items-center justify-center border border-line bg-transparent px-5 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:border-ink"
+            @click="scrollToSection('#contact')"
           >
             {{ t.getInTouch }}
-          </a>
+          </button>
         </div>
       </div>
 
@@ -260,6 +262,22 @@ const skills = [
   "Tailwind",
   "PostgreSQL",
 ];
+
+const router = useRouter();
+
+const scrollToSection = async (hash: string) => {
+  if (useRoute().hash !== hash) {
+    await router.push({ hash });
+  }
+  await nextTick();
+  const el = document.querySelector(hash);
+  if (!el) return;
+  const top =
+    el.getBoundingClientRect().top +
+    (window.pageYOffset || document.documentElement.scrollTop) -
+    88;
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+};
 
 onMounted(() => initLocale());
 </script>

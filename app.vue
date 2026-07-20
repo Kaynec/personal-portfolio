@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-svh overflow-x-clip">
+  <div class="min-h-svh">
     <AppHeader />
     <Transition name="locale" mode="out-in">
-      <div :key="locale" class="locale-shell overflow-x-clip">
+      <div :key="locale" class="locale-shell">
         <NuxtPage />
       </div>
     </Transition>

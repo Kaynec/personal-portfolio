@@ -44,7 +44,16 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
-    overflow-x: clip;
+    /* Do NOT set overflow-x alone — CSS forces overflow-y to auto and
+       creates a non-viewport scroll container, breaking hash navigation. */
+  }
+
+  /* Keep in-page anchors clear of the fixed header */
+  #work,
+  #experience,
+  #about,
+  #contact {
+    scroll-margin-top: 5.5rem;
   }
 
   html.dark {
@@ -62,7 +71,6 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     min-height: 100svh;
-    overflow-x: clip;
     transition: background-color 0.35s ease, color 0.35s ease;
   }
 
