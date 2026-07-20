@@ -22,14 +22,14 @@
         <nav
           class="hidden items-center gap-5 text-sm text-ink-soft sm:flex md:gap-7"
         >
-          <a
+          <NuxtLink
             v-for="link in links"
-            :key="link.href"
-            :href="link.href"
+            :key="link.hash"
+            :to="{ path: '/', hash: link.hash }"
             class="relative transition-colors hover:text-ink after:absolute after:-bottom-1 after:start-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
           >
             {{ link.label }}
-          </a>
+          </NuxtLink>
         </nav>
         <ClientOnly>
           <div class="flex items-center gap-2">
@@ -46,11 +46,13 @@
 const scrolled = ref(false);
 const { t, initLocale } = useLocale();
 
+// Use NuxtLink + route hash so paths respect app.baseURL
+// (/personal-portfolio/ on GitHub Pages), not site-root /#work.
 const links = computed(() => [
-  { label: t.value.navWork, href: "/#work" },
-  { label: t.value.navExperience, href: "/#experience" },
-  { label: t.value.navAbout, href: "/#about" },
-  { label: t.value.navContact, href: "/#contact" },
+  { label: t.value.navWork, hash: "#work" },
+  { label: t.value.navExperience, hash: "#experience" },
+  { label: t.value.navAbout, hash: "#about" },
+  { label: t.value.navContact, hash: "#contact" },
 ]);
 
 const onScroll = () => {
