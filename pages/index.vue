@@ -84,11 +84,8 @@
       <ul class="divide-y divide-line border-y border-line">
         <li v-for="(project, index) in featured" :key="project.name">
           <Reveal :delay="index * 80">
-            <a
-              :href="project.href"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group grid grid-cols-[1fr_auto] items-baseline gap-4 py-8 transition-colors md:grid-cols-[7rem_1fr_auto] md:gap-8 md:py-10"
+            <div
+              class="grid grid-cols-1 items-baseline gap-4 py-8 md:grid-cols-[7rem_1fr] md:gap-8 md:py-10"
             >
               <span class="hidden text-sm text-muted md:block">
                 {{ project.year }}
@@ -96,7 +93,7 @@
               <div class="min-w-0">
                 <div class="flex items-baseline gap-3">
                   <h3
-                    class="text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent md:text-3xl"
+                    class="text-2xl font-semibold tracking-tight md:text-3xl"
                   >
                     {{ project.name }}
                   </h3>
@@ -109,13 +106,7 @@
                   {{ project.stack.join(" · ") }}
                 </p>
               </div>
-              <span
-                class="text-sm text-muted transition-transform duration-300 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:text-ink"
-              >
-                <span class="ltr:inline rtl:hidden">→</span>
-                <span class="ltr:hidden rtl:inline">←</span>
-              </span>
-            </a>
+            </div>
           </Reveal>
         </li>
       </ul>

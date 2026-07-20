@@ -43,7 +43,6 @@ export type Messages = {
     name: string;
     description: string;
     stack: string[];
-    href: string;
     year: string;
   }[];
 };
@@ -130,7 +129,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "A gaming-focused shopping experience built with Nuxt — catalog, checkout, and storefront polish.",
         stack: ["Nuxt", "Vue", "Tailwind"],
-        href: "https://cheatsg.ir",
         year: "2024",
       },
       {
@@ -138,7 +136,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "General-purpose e-commerce storefront with a clean browsing and purchase flow.",
         stack: ["Nuxt", "Vue"],
-        href: "https://cheatsg.ir",
         year: "2024",
       },
       {
@@ -146,7 +143,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "Progressive web app for learning and career tools, built for speed on mobile.",
         stack: ["Vue", "Vuetify", "PWA"],
-        href: "https://webapp.herfehplus.ir/",
         year: "2023",
       },
       {
@@ -154,7 +150,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "Video subtitle editing app with a focused React interface for precise timing and text.",
         stack: ["React", "TypeScript"],
-        href: "https://caption.darkube.app",
         year: "2023",
       },
       {
@@ -162,7 +157,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "Daily puzzle solutions — a personal practice ground for algorithms and clean code.",
         stack: ["TypeScript"],
-        href: "https://github.com/kaynec/advent-of-code-2024",
         year: "2024",
       },
     ],
@@ -248,7 +242,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "فروشگاه آنلاین با تمرکز روی گیمینگ، ساخته‌شده با Nuxt — کاتالوگ، تسویه و تجربه فروشگاهی.",
         stack: ["Nuxt", "Vue", "Tailwind"],
-        href: "https://cheatsg.ir",
         year: "2024",
       },
       {
@@ -256,7 +249,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "فروشگاه اینترنتی عمومی با جریان ساده مرور و خرید.",
         stack: ["Nuxt", "Vue"],
-        href: "https://cheatsg.ir",
         year: "2024",
       },
       {
@@ -264,7 +256,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "وب‌اپلیکیشن Progressive برای آموزش و ابزارهای شغلی، بهینه‌شده برای موبایل.",
         stack: ["Vue", "Vuetify", "PWA"],
-        href: "https://webapp.herfehplus.ir/",
         year: "2023",
       },
       {
@@ -272,7 +263,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "اپلیکیشن ویرایش زیرنویس ویدیو با رابط React برای زمان‌بندی و متن دقیق.",
         stack: ["React", "TypeScript"],
-        href: "https://caption.darkube.app",
         year: "2023",
       },
       {
@@ -280,7 +270,6 @@ export const messages: Record<Locale, Messages> = {
         description:
           "راه‌حل‌های روزانه پازل — تمرین شخصی برای الگوریتم و کد تمیز.",
         stack: ["TypeScript"],
-        href: "https://github.com/kaynec/advent-of-code-2024",
         year: "2024",
       },
     ],
